@@ -1,0 +1,26 @@
+class SistemaCreencias:
+    def __init__(self):
+        self.cree_pajaros_no_vuelan = True
+
+    def obtener_creencia_pajaros_vuelan(self):
+        if self.cree_pajaros_no_vuelan:
+            return False
+        else:
+            return True
+
+    def revisar_informacion(self, nueva_informacion):
+        if nueva_informacion == "Hemos observado que los pájaros vuelan":
+            self.cree_pajaros_no_vuelan = False
+            print("Revisando creencia: Ahora creo que los pájaros vuelan.")
+
+# Uso del sistema de creencias
+sistema = SistemaCreencias()
+
+# Consulta inicial
+print("¿Crees que los pájaros vuelan?", sistema.obtener_creencia_pajaros_vuelan())
+
+# Revisión de información
+sistema.revisar_informacion("Hemos observado que los pájaros vuelan")
+
+# Consulta después de la revisión
+print("¿Crees que los pájaros vuelan?", sistema.obtener_creencia_pajaros_vuelan())
