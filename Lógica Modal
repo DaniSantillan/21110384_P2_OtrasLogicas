@@ -1,0 +1,33 @@
+from modal_logic import World, Statement
+
+# Creamos un mundo
+world = World()
+
+# Creamos algunas proposiciones
+p = Statement("p")
+q = Statement("q")
+
+# Añadimos proposiciones al mundo
+world.add_statement(p)
+world.add_statement(q)
+
+# Establecemos que p es verdadero en el mundo actual
+world.set_truth_value(p, True)
+
+# Verificamos si p es verdadero en el mundo actual
+print(f"p es verdadero: {world.is_true(p)}")
+
+# Verificamos si q es verdadero en el mundo actual
+print(f"q es verdadero: {world.is_true(q)}")
+
+# Creamos un nuevo mundo que es una posibilidad del mundo actual
+possible_world = world.branch()
+
+# Establecemos que q es verdadero en el nuevo mundo
+possible_world.set_truth_value(q, True)
+
+# Verificamos si q es verdadero en el nuevo mundo
+print(f"q es verdadero en la posibilidad: {possible_world.is_true(q)}")
+
+# Verificamos si p es verdadero en la posibilidad (debería ser igual al mundo actual)
+print(f"p es verdadero en la posibilidad: {possible_world.is_true(p)}")
