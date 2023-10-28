@@ -1,0 +1,10 @@
+def multiplicar(a, b=1):
+    resultado = a * b
+    return resultado
+
+# Ejemplos de uso
+resultado1 = multiplicar(5, 3)
+print(resultado1)  # Salida: 15
+
+resultado2 = multiplicar(7)
+print(resultado2)  # Salida: 7 (porque asume que b=1)
